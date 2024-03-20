@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/camper-rental-ua/static/js/main.d7895924.js",
+    "static/js/453.46bbf3f9.chunk.js": "/camper-rental-ua/static/js/453.46bbf3f9.chunk.js",
+    "index.html": "/camper-rental-ua/index.html",
+    "main.d7895924.js.map": "/camper-rental-ua/static/js/main.d7895924.js.map",
+    "453.46bbf3f9.chunk.js.map": "/camper-rental-ua/static/js/453.46bbf3f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.d7895924.js"
+  ]
+}
