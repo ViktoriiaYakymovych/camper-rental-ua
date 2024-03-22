@@ -1,9 +1,15 @@
-import React from 'react'
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchAllCampers } from "../../redux/operations";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const dispatch = useDispatch();
 
-export default Home
+  useEffect(() => {
+    dispatch(fetchAllCampers());
+  }, [dispatch]);
+
+  return <div>Home</div>;
+};
+
+export default Home;

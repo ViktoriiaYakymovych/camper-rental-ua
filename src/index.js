@@ -4,14 +4,23 @@ import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import GlobalStyle from "./styles/global.styled";
+import { Provider } from "react-redux";
+import { 
+  // persistor, 
+  store } from "./redux/store";
+// import { PersistGate } from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="camper-rental-ua">
-      <App />
-      <GlobalStyle />
-    </BrowserRouter>
+    <Provider store={store}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
+        <BrowserRouter basename="camper-rental-ua">
+          <App />
+          <GlobalStyle />
+        </BrowserRouter>
+      {/* </PersistGate> */}
+    </Provider>
   </React.StrictMode>
 );
 
