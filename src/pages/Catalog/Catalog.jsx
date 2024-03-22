@@ -1,9 +1,14 @@
-import React from 'react'
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchAllCampers } from "../../redux/operations";
 
 const Catalog = () => {
-  return (
-    <div>Catalog</div>
-  )
-}
+  const dispatch = useDispatch();
 
-export default Catalog
+  useEffect(() => {
+    dispatch(fetchAllCampers());
+  }, [dispatch]);
+  return <div>Catalog</div>;
+};
+
+export default Catalog;
