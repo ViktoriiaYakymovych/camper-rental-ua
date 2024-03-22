@@ -8,6 +8,8 @@ import { Provider } from "react-redux";
 import { 
   // persistor, 
   store } from "./redux/store";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./styles/theme";
 // import { PersistGate } from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -15,10 +17,12 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       {/* <PersistGate loading={null} persistor={persistor}> */}
-        <BrowserRouter basename="camper-rental-ua">
+      <BrowserRouter basename="camper-rental-ua">
+        <ThemeProvider theme={theme}>
           <App />
           <GlobalStyle />
-        </BrowserRouter>
+        </ThemeProvider>
+      </BrowserRouter>
       {/* </PersistGate> */}
     </Provider>
   </React.StrictMode>

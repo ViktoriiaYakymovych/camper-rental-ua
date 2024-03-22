@@ -1,33 +1,44 @@
 import { createGlobalStyle } from "styled-components";
 import "modern-normalize";
+import { theme } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-body {
-  color: black;
-  background: #F7F7F7;
+@font-face {
+    font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/Inter-Medium.ttf') format('ttf'); 
+  }
+  @font-face {
+    font-display: swap; 
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/Inter-Regular.ttf') format('ttf'); 
+  }
+  @font-face {
+    font-display: swap; 
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./fonts/Inter-SemiBold.ttf') format('ttf'); 
+  }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 html {
   box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+body {
+  font-family: ${theme.fonts.mainFont};
+  color:${theme.colors.primary};
 }
 
 h1,
@@ -67,6 +78,7 @@ button {
   cursor: pointer;
   padding: 0;
   border: none;
+  font: inherit;
 }
 `;
 

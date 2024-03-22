@@ -1,3 +1,4 @@
+import { Icon } from "@iconify-icon/react";
 import { HomeList, HomeSection } from "./Home.styled";
 
 const Home = () => {
@@ -7,6 +8,14 @@ const Home = () => {
       <HomeList>
         <li>
           <h2>Diverse Selection of Campervans</h2>
+          <Icon
+            icon="fluent:weather-blowing-snow-20-regular"
+            style={{ color: "blue", fontSize: "32px" }}
+          />
+          <Icon
+            icon="tabler:automatic-gearbox"
+            style={{ color: "blue", fontSize: "24px" }}
+          />
           <p>
             We offer a wide range of campervans for rental, from small car-top
             tents to large and comfortable van-based campers.

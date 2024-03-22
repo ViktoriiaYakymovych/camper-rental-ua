@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 
 export const Header = styled.header`
   margin: 0 auto;
-  padding: 14px 96px;
+  padding: 16px 24px;
   width: 100%;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -12,6 +12,7 @@ export const Header = styled.header`
     width: 375px;
   }
   @media screen and (min-width: 768px) {
+    padding: 16px 96px;
     width: 768px;
   }
   @media screen and (min-width: 1440px) {
