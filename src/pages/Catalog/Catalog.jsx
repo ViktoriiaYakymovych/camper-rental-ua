@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllCampers } from "../../redux/operations";
 import { selectCampers } from "../../redux/selectors";
+import FilterCatalog from "../../components/FilterCatalog/FilterCatalog";
+import { CatalogWrap } from "./Catalog.styled";
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -12,8 +14,9 @@ console.log(campers);
     dispatch(fetchAllCampers());
   }, [dispatch]);
   return (
-    <div>
-      {campers && (
+    <CatalogWrap>
+      <FilterCatalog/>
+      {/* {campers && (
         <ul>
           {campers.map((camper) => (
             <li key={camper.id}>
@@ -24,8 +27,8 @@ console.log(campers);
             </li>
           ))}
         </ul>
-      )}
-    </div>
+      )} */}
+    </CatalogWrap>
   );
 };
 

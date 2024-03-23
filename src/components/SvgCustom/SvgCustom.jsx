@@ -1,4 +1,4 @@
-import sprite from '../../img/sprite.svg';
+import sprite from '../../images/sprite.svg'
 import { SvgWrap } from './SvgCustom.styled';
 
 const SvgCustom = ({ icon, size, color, stroke, hover, tabSize }) => {
