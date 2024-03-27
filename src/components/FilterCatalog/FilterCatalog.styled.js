@@ -30,11 +30,10 @@ export const LocationLable = styled.label`
       color: ${(props) => props.theme.colors.primary60};
     }
 
-    /* &:focus,
-    &:hover {
+    &:focus-visible {
       outline: none;
       border: 1px solid ${(props) => props.theme.colors.accent};
-    } */
+    }
   }
 
   & > div {
@@ -95,7 +94,7 @@ export const FilterLabel = styled.label`
 
   cursor: pointer;
 
-  & > input:checked + & {
+  &:hover, &:focus {
     border: 1px solid ${(props) => props.theme.colors.accent};
   }
 `;
@@ -103,6 +102,10 @@ export const FilterLabel = styled.label`
 export const FilterInput = styled.input`
   position: absolute;
   visibility: hidden;
+
+  /* &:checked + &  {
+    border: 1px solid ${(props) => props.theme.colors.accent};
+  } */
 `;
 
 export const FilterSecondContainer = styled.div`

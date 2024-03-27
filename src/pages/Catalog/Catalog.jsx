@@ -4,30 +4,19 @@ import { fetchAllCampers } from "../../redux/operations";
 import { selectCampers } from "../../redux/selectors";
 import FilterCatalog from "../../components/FilterCatalog/FilterCatalog";
 import { CatalogWrap } from "./Catalog.styled";
+import CapmersList from "../../components/CapmersList/CapmersList";
 
 const Catalog = () => {
   const dispatch = useDispatch();
-const campers = useSelector(selectCampers)
-console.log(campers);
+  const campers = useSelector(selectCampers);
 
   useEffect(() => {
     dispatch(fetchAllCampers());
   }, [dispatch]);
   return (
     <CatalogWrap>
-      <FilterCatalog/>
-      {/* {campers && (
-        <ul>
-          {campers.map((camper) => (
-            <li key={camper.id}>
-              <p>{camper.name}</p>
-              <p>{camper.price}</p>
-              <p>{camper.rating}</p>
-              <p>{camper.location}</p>
-            </li>
-          ))}
-        </ul>
-      )} */}
+      <FilterCatalog />
+      <CapmersList campers={campers} />
     </CatalogWrap>
   );
 };

@@ -1,13 +1,22 @@
 import { useState } from "react";
+import { Icon } from "@iconify-icon/react";
 import SvgCustom from "../SvgCustom";
 import { theme } from "../../styles/theme";
-import { FilterContainer, FilterInput, FilterLabel, FilterText, FilterTitle, FilterWrap, Form, LocationLable, FilterSecondContainer, SubmitBtn } from "./FilterCatalog.styled";
+import {
+  FilterContainer,
+  FilterInput,
+  FilterLabel,
+  FilterText,
+  FilterTitle,
+  FilterWrap,
+  Form,
+  LocationLable,
+  FilterSecondContainer,
+  SubmitBtn,
+} from "./FilterCatalog.styled";
 
 const FilterCatalog = () => {
-  const [
-    location,
-    // setLocation
-  ] = useState("");
+  const [location, setLocation] = useState("");
 
   const [ac, setAc] = useState(false);
   const [automatic, setAutomatic] = useState(false);
@@ -19,11 +28,15 @@ const FilterCatalog = () => {
   const [fullyIntergrated, setFullyIntergrated] = useState(false);
   const [alcove, setAlcove] = useState(false);
 
+  const onInputChange = (e) => {
+    setLocation(e.target.value);
+  };
+
   return (
     <Form>
       <LocationLable>
         Location
-        <input type="text" value={location} placeholder="City" />
+        <input type="text" value={location} onChange={onInputChange} placeholder="City" />
         <div>
           <SvgCustom
             icon="icon-map"
@@ -40,8 +53,15 @@ const FilterCatalog = () => {
         <FilterTitle>Vehicle equipment</FilterTitle>
         <FilterContainer>
           <FilterLabel>
-            <SvgCustom icon="icon-ac" size="32" stroke={theme.colors.primary} />
-            <FilterInput type="checkbox" checked={ac} onChange={() => setAc(!ac)} />
+            <Icon
+              icon="fluent:weather-blowing-snow-20-regular"
+              style={{ color: `${theme.colors.primary}`, fontSize: "32px" }}
+            />
+            <FilterInput
+              type="checkbox"
+              checked={ac}
+              onChange={() => setAc(!ac)}
+            />
             AC
           </FilterLabel>
           <FilterLabel>
@@ -72,7 +92,11 @@ const FilterCatalog = () => {
           </FilterLabel>
           <FilterLabel>
             <SvgCustom icon="icon-tv" size="32" stroke={theme.colors.primary} />
-            <FilterInput type="checkbox" checked={tv} onChange={() => setTv(!tv)} />
+            <FilterInput
+              type="checkbox"
+              checked={tv}
+              onChange={() => setTv(!tv)}
+            />
             TV
           </FilterLabel>
           <FilterLabel>
