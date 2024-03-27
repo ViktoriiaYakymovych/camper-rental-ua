@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/camper-rental-ua/static/css/main.7cda0caf.css",
-    "main.js": "/camper-rental-ua/static/js/main.136bf7ee.js",
-    "static/js/410.f9dc96b6.chunk.js": "/camper-rental-ua/static/js/410.f9dc96b6.chunk.js",
-    "static/js/724.249cbaa4.chunk.js": "/camper-rental-ua/static/js/724.249cbaa4.chunk.js",
+    "main.js": "/camper-rental-ua/static/js/main.94261289.js",
+    "static/js/410.3f789307.chunk.js": "/camper-rental-ua/static/js/410.3f789307.chunk.js",
+    "static/js/166.c14455e4.chunk.js": "/camper-rental-ua/static/js/166.c14455e4.chunk.js",
     "static/js/500.e539b5c0.chunk.js": "/camper-rental-ua/static/js/500.e539b5c0.chunk.js",
     "static/js/453.46bbf3f9.chunk.js": "/camper-rental-ua/static/js/453.46bbf3f9.chunk.js",
     "static/js/228.e52fa0aa.chunk.js": "/camper-rental-ua/static/js/228.e52fa0aa.chunk.js",
     "static/media/sprite.svg": "/camper-rental-ua/static/media/sprite.315e9372e08862f8420c6e4d548c3f66.svg",
     "index.html": "/camper-rental-ua/index.html",
     "main.7cda0caf.css.map": "/camper-rental-ua/static/css/main.7cda0caf.css.map",
-    "main.136bf7ee.js.map": "/camper-rental-ua/static/js/main.136bf7ee.js.map",
-    "410.f9dc96b6.chunk.js.map": "/camper-rental-ua/static/js/410.f9dc96b6.chunk.js.map",
-    "724.249cbaa4.chunk.js.map": "/camper-rental-ua/static/js/724.249cbaa4.chunk.js.map",
+    "main.94261289.js.map": "/camper-rental-ua/static/js/main.94261289.js.map",
+    "410.3f789307.chunk.js.map": "/camper-rental-ua/static/js/410.3f789307.chunk.js.map",
+    "166.c14455e4.chunk.js.map": "/camper-rental-ua/static/js/166.c14455e4.chunk.js.map",
     "500.e539b5c0.chunk.js.map": "/camper-rental-ua/static/js/500.e539b5c0.chunk.js.map",
     "453.46bbf3f9.chunk.js.map": "/camper-rental-ua/static/js/453.46bbf3f9.chunk.js.map",
     "228.e52fa0aa.chunk.js.map": "/camper-rental-ua/static/js/228.e52fa0aa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.136bf7ee.js"
+    "static/js/main.94261289.js"
   ]
 }
