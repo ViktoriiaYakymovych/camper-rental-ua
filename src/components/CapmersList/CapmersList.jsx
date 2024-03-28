@@ -1,12 +1,34 @@
 import { Icon } from "@iconify-icon/react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllCampers } from "../../redux/operations";
+import { selectCampers } from "../../redux/selectors";
 import SvgCustom from "../SvgCustom";
 import { theme } from "../../styles/theme";
+import {
+  CatalogContentWrap,
+  CatalogDescriptionWrap,
+  CatalogRatingLocationWrap,
+  CatalogTitleWrap,
+  Figure,
+  Li,
+  Ul,
+} from "./CapmersList.styled";
+import { ModalWindow } from "../Modal/Modal";
 
-const CapmersList = ({ campers }) => {
+const CapmersList = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const dispatch = useDispatch();
+  const campers = useSelector(selectCampers);
+
+  useEffect(() => {
+    dispatch(fetchAllCampers());
+  }, [dispatch]);
   return (
     <>
       {campers && (
-        <ul>
+        <Ul>
           {campers.map(
             ({
               id,
@@ -26,25 +48,27 @@ const CapmersList = ({ campers }) => {
                 // airConditioner
               },
             }) => (
-              <li key={id}>
-                <figure>
-                  <img src={gallery[0]} alt={name} width={290} height={310} />
-                </figure>
+              <Li key={id}>
+                <Figure>
+                  <img src={gallery[0]} alt={name} />
+                </Figure>
 
-                <div>
+                <CatalogContentWrap>
                   <div>
-                    <div>
+                    <CatalogTitleWrap>
                       <h2>{name}</h2>
                       <div>
                         <p>&#8364;{price.toFixed(2)}</p>{" "}
-                        <SvgCustom
-                          icon="icon-heart"
-                          size="24"
-                          stroke={theme.colors.primary}
-                        />
+                        <button>
+                          <SvgCustom
+                            icon="icon-heart"
+                            size="24"
+                            stroke={theme.colors.primary}
+                          />
+                        </button>
                       </div>
-                    </div>
-                    <div>
+                    </CatalogTitleWrap>
+                    <CatalogRatingLocationWrap>
                       <div>
                         <SvgCustom
                           icon="icon-rating"
@@ -63,15 +87,15 @@ const CapmersList = ({ campers }) => {
                         />
                         <p>{location}</p>
                       </div>
-                    </div>
+                    </CatalogRatingLocationWrap>
                   </div>
 
-                  <p>
+                  <span>
                     The pictures shown here are example vehicles of the
                     respective.
-                  </p>
+                  </span>
 
-                  <div>
+                  <CatalogDescriptionWrap>
                     <div>
                       <SvgCustom
                         icon="icon-adults"
@@ -122,13 +146,21 @@ const CapmersList = ({ campers }) => {
                       />
                       <p>AC</p>
                     </div>
-                  </div>
-                  <button>Show more</button>
-                </div>
-              </li>
+                  </CatalogDescriptionWrap>
+                  <button onClick={() => setIsModalOpen(true)}>
+                    Show more
+                  </button>
+                </CatalogContentWrap>
+                <ModalWindow
+                  isOpen={isModalOpen}
+                  onRequestClose={() => setIsModalOpen(false)}
+                >
+                  Modal Content
+                </ModalWindow>
+              </Li>
             )
           )}
-        </ul>
+        </Ul>
       )}
     </>
   );
