@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllCampers } from "../../redux/operations";
 import { selectCampers } from "../../redux/selectors";
 import SvgCustom from "../SvgCustom";
+import ModalContent from "../ModalContent/ModalContent";
 import { theme } from "../../styles/theme";
 import {
   CatalogContentWrap,
@@ -155,7 +156,7 @@ const CapmersList = () => {
                   isOpen={isModalOpen}
                   onRequestClose={() => setIsModalOpen(false)}
                 >
-                  Modal Content
+                  <ModalContent />
                 </ModalWindow>
               </Li>
             )
